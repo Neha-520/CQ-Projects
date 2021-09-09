@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: "rgb(71, 111, 112)" 
 }
 
 .App-logo {
@@ -68,18 +69,30 @@ p {
  .z li.x{display: none;}
 }
 
-.btn{
-  padding:1rem;color:#fff;
-  display:inline-block}
-
-.btn-primary{
-  background:var(--primary-color)}
-
-.btn-primary:hover{
-  background:var(--primary-color-hover)}
-
-.btn-secondary{
-  background:var(--secondary-color)}
-
-.btn-secondary:hover{
-  background:var(--secondary-color-hover)}
+.gift-cards{
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.foote{
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+      padding: 2rem;
+    text-align: left;
+    font-size: 14px;
+}
+.footer-cols{
+  display: flex;
+  flex-direction:column ;
+}
+ul{
+  list-style: none;
+  flex:1;
+}
+li{
+      color: #ccc;
+}
+hr{
+  color: black;
+}

@@ -1,8 +1,11 @@
 import './App.css';
+import { Coupons } from './Coupons';
+import { Footer } from './Footer';
 import { Nav } from './Nav';
 import { Showcase } from './Showcase';
 import { Tutorials } from './Tutorials';
-import { Switch, Route } from 'react-router-dom';
+import { Video } from './Video';
+// import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
       </Switch> */}
       <Showcase />
       <Tutorials />
+      <Video />
+      <Coupons />
+      <Footer />
     </div>
   );
 }
