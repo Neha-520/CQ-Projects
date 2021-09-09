@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Coupons = () => {
     return (
-        <section id="coupon" className="section bg-light">
+        <section id="Coupon" className="section bg-light">
             <div className="container">
                 <div className="gift-cards p-5">
                     <div style={{ flex: "1" }}>

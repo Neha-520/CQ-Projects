@@ -9,7 +9,7 @@ export const Nav = () => {
                     <a className="nav-link active text-white" aria-current="page" href="#geeky">Being Geeky</a>
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="#documentation">Tutorials</a>
+                            <a className="nav-link text-white" href="#Tutorial">Tutorials</a>
                         </li>
                         <li className="nav-item ">
                             <a className="nav-link text-white" href="#Video">Video</a>
@@ -24,7 +24,7 @@ export const Nav = () => {
                         <div className="bg-dark p-4">
                             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                                 <li className="nav-item ">
-                                    <a className="nav-link text-white" href="#documentation">Tutorials</a>
+                                    <a className="nav-link text-white" href="#Tutorial">Tutorials</a>
                                 </li>
                                 <li className="nav-item ">
                                     <a className="nav-link text-white" href="#Video">Video</a>

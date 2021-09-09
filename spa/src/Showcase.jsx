@@ -5,7 +5,7 @@ export const Showcase = () => {
     return (
         <>
             <div>
-                <div className="showcase" style={{ backgroundColor: "#F4F4F4" }}>
+                <div id="geeky" className="showcase" style={{ backgroundColor: "#F4F4F4" }}>
                     <h1>Being Geeky</h1>
                     <h2>Your own video and theortical study place.</h2>
                     <p className="lead hide-on-small">

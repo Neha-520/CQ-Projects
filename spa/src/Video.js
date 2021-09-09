@@ -3,7 +3,7 @@ import React from 'react'
 export const Video = () => {
     return (
         <>
-            <section id="video" className="section bg-light"><div className="container p-5">
+            <section id="Video" className="section bg-light"><div className="container p-5">
                 <h3 >The video lecture you shouldn't miss</h3>
                 <p className="lead"> With one of the best content available online.And one of the best instructors it makes Being Geeky one of the best available learing platform available.he spread of computers and layout programmes thus made dummy text better known. While in earlier times several lines of the Lorem Ipsum text were repeated in the creation of dummy texts, today the full text of Cicero's 'De finibus' serves as the basis for many dummy text or Lorem Ipsum generators. Based on 'De finibus', these generators automatically create longer sections of the Lorem Ipsum text or various other filler texts.</p>
                 <button className="btn-outline text-white" style={{ height: "50px", width: "200px", backgroundColor: "#103063" }}>Read More</button><br /><br /><br />
