@@ -64,10 +64,18 @@ p {
 /* @media screen and (max-width:780px){.gift-cards{grid-template-columns:1fr}
   footer .footer-cols{display:none}
   } */
-  @media (max-width: 770px){
+  @media (max-width: 780px){
+.showcase p.lead{display:none}
+ .z li.x{display: none;}
+ footer{display: none;}
+ .container .gift-cards{flex-direction: column; justify-content: left;}
+}
+
+@media (max-width: 580px){
 .showcase p.lead{display:none}
  .z li.x{display: none;}
 }
+
 
 .gift-cards{
   display: flex;
@@ -77,8 +85,7 @@ p {
 .foote{
   display: flex;
   flex-direction: row;
-  text-align: left;
-      padding: 2rem;
+    padding: 2rem;
     text-align: left;
     font-size: 14px;
 }
