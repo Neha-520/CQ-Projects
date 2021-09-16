@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+.signup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:35%;
+  min-width: 40%;
+height: 85vh;
+}
+form{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+button{
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+ float: center;
+}
+input{
+  padding: 0.85rem;
+  width: 100%;
+}
