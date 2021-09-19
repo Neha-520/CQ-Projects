@@ -11,7 +11,7 @@ export default function SignUp() {
                 <input type="email" placeholder="Enter your email"></input>
                 <label><h3>Password</h3></label>
                 <input type="password" placeholder="Enter Password"></input>
-                <button>SignUp</button>
+                <button style={{ alignSelf: "center" }}>SignUp</button>
                 <Link to="/signin">SignIn</Link>
             </form>
         </div>
