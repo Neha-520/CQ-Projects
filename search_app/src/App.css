@@ -38,6 +38,22 @@
 }
 input{
   padding: 0.90rem;
-  min-width: 100%;
+  min-width: 98%;
   border: none;
+}
+table{
+   border: 1px solid black;
+   border-collapse: collapse;
+   padding: 0.9rem;
+   align-self:"center"
+}
+tr:nth-child(odd) {
+background-color: #cacace;
+ }
+tr,td,th{
+   padding: 0.9rem;
+}
+.a{
+  width: 100px ;
+  white-space: nowrap;
 }
