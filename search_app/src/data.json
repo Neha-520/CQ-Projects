@@ -1,0 +1,28 @@
+{
+    "employee": [
+        {
+            "name": "Sagar",
+            "location": "kaithal"
+        },
+        {
+            "name": "Rahul",
+            "location": "Chandigarh"
+        },
+        {
+            "name": "Rahul KL",
+            "location": "Bangalore"
+        },
+        {
+            "name": "Sant",
+            "location": "Yamuna Nagar"
+        },
+        {
+            "name": "Sumit",
+            "location": "Chandigarh"
+        },
+        {
+            "name": "Yuvika",
+            "location": "Sunam"
+        }
+    ]
+}
