@@ -1,14 +1,17 @@
+<link rel="stylesheet" href="/styles/app.css" />
 <div className="login">
-    <h1>SignIn</h1>
+    <h1 style="margin-top: 4rem;">SignIn</h1>
     <form method="POST" action="/login">
-        <label>
-            <h3>Username</h3>
-        </label>
-        <input type="text" name="username" placeholder="Enter Username" />
-        <label>
-            <h3>Password</h3>
-        </label>
-        <input type="password" name="password" placeholder="Enter Password" />
+        <div style="text-align: left;">
+            <label>
+                <h3>Username</h3>
+            </label>
+            <input type="text" name="username" placeholder="Enter Username" />
+            <label>
+                <h3>Password</h3>
+            </label>
+            <input type="password" name="password" placeholder="Enter Password" />
+        </div>
         <button type="submit" style="align-self:center">SignIn</button>
     </form>
 </div>

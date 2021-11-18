@@ -3,14 +3,23 @@ const fs = require("fs");
 const session = require("express-session")
 
 const app = express();
-const PORT = 3000;
+const port = 3000;
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+
+}))
 
 app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: true }))
 
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-    res.render("landingPage");
+    res.render('landingPage');
 })
 
 app.route('/login').get(function (req, res) {
@@ -18,11 +27,48 @@ app.route('/login').get(function (req, res) {
 })
     .post(function (req, res) {
         const { username, password } = req.body;
+
+        fs.readFile("./db.txt", "utf-8", (err, data) => {
+            if (err) {
+                res.render("login", { error: "something went terribly wrong" })
+                return;
+            }
+            let users = [];
+            if (data.length > 0 && data[0] === "[" && data[data.length - 1] === "]") {
+                users = JSON.parse(data);
+            }
+            for (let i = 0; i < users.length; i++) {
+                let user = users[i];
+                if (user.username === username) {
+                    req.session.user = user;
+                    req.session.is_logged_in = true;
+                    res.redirect("/home");
+                }
+            }
+            res.render("login", { error: "user not found :(" })
+        })
     });
 
-app.route('/signup').get(function (req, res) {
+app.route('/signup').get((req, res) => {
     res.render("signup");
 })
-    .post(function (req, res) {
+    .post((req, res) => {
+        const { name, username, mobile, email, password } = req.body;
+        fs.readFile("./db.txt", 'utf-8', (err, data) => {
+            if (err) {
+                res.render("signup", { error: "something went horribly wrong" });
+                return;
+            }
+            let users = [];
+            if (data.length > 0 && data[0] === '[' && data[data.length - 1]) {
 
+            }
+        })
     });
+
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
+
+

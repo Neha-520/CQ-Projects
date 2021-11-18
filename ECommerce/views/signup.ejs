@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/styles/app.css" />
 <div className="signup">
     <h1>SignUp</h1>
     <form method="POST" action="/signup">
@@ -10,10 +11,25 @@
         </label>
         <input type="email" name="email" placeholder="Enter your email" />
         <label>
+            <h3>Mobile</h3>
+        </label>
+        <input type="number" placeholder="mobile" name="mobile" />
+        <label>
+            <h3>Name</h3>
+        </label>
+        <input placeholder="name" name="name" />
+        <label>
             <h3>Password</h3>
         </label>
-        <input type="password" placeholder="Enter Password" />
+        <input name="password" type="password" placeholder="Enter Password" />
         <button type="submit" style="align-self:center">SignUp</button>
-        <Link to="/signin">SignIn</Link>
     </form>
 </div>
+
+<% if(error) { %>
+    <div style="padding:10px; color:rgb(206, 25, 25);">
+        <h4>
+            <%= error %>
+        </h4>
+    </div>
+    <% } %>
