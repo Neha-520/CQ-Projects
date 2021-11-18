@@ -1,3 +1,22 @@
-<form method="POST" action="/login">
-    <input>
-</form>
+<div className="login">
+    <h1>SignIn</h1>
+    <form method="POST" action="/login">
+        <label>
+            <h3>Username</h3>
+        </label>
+        <input type="text" name="username" placeholder="Enter Username" />
+        <label>
+            <h3>Password</h3>
+        </label>
+        <input type="password" name="password" placeholder="Enter Password" />
+        <button type="submit" style="align-self:center">SignIn</button>
+    </form>
+</div>
+
+<% if(error) { %>
+    <div style="padding:10px; color:rgb(206, 25, 25);">
+        <h4>
+            <%= error %>
+        </h4>
+    </div>
+    <% } %>
