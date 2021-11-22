@@ -2,6 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const session = require("express-session")
 
+const checkAuth = require("./middlewares/checkAuth")
+
 const app = express();
 const port = 3000;
 
@@ -61,11 +63,36 @@ app.route('/signup').get((req, res) => {
             }
             let users = [];
             if (data.length > 0 && data[0] === '[' && data[data.length - 1]) {
-
+                users = JSON.parse(data);
             }
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].username === username) {
+                    res.render("signup", { error: "user already exist" });
+                    return;
+                }
+            }
+            users.push({ name, username, mobile, email, password });
+
+            fs.writeFile("./db.txt", JSON.stringify(users), (err) => {
+                if (err) {
+                    res.render("signup", { error: "ERRROORRRR" });
+                    return;
+                }
+                req.session.user = user;
+                req.session.is_logged_in = true;
+                res.redirect("/home")
+            })
         })
     });
 
+app.get("/home", checkAuth, function (req, res) {
+    res.render("home", { user: req.session.user })
+})
+
+app.get("/logout", (req, res) => {
+    req.session.destroy();
+    res.redirect("/");
+})
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
