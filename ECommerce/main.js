@@ -7,6 +7,8 @@ const checkAuth = require("./middlewares/checkAuth")
 const app = express();
 const port = 3000;
 
+app.set("view engine", "ejs");
+
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -17,8 +19,6 @@ app.use(session({
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }))
-
-app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
     res.render('landingPage');
@@ -45,6 +45,7 @@ app.route('/login').get(function (req, res) {
                     req.session.user = user;
                     req.session.is_logged_in = true;
                     res.redirect("/home");
+                    return;
                 }
             }
             res.render("login", { error: "user not found :(" })
@@ -52,10 +53,12 @@ app.route('/login').get(function (req, res) {
     });
 
 app.route('/signup').get((req, res) => {
-    res.render("signup");
+    res.render("signup", { error: "" });
 })
     .post((req, res) => {
         const { name, username, mobile, email, password } = req.body;
+        const user = { name, username, mobile, email, password };
+
         fs.readFile("./db.txt", 'utf-8', (err, data) => {
             if (err) {
                 res.render("signup", { error: "something went horribly wrong" });
@@ -66,12 +69,12 @@ app.route('/signup').get((req, res) => {
                 users = JSON.parse(data);
             }
             for (let i = 0; i < users.length; i++) {
-                if (users[i].username === username) {
+                if (users[i].username === user.username) {
                     res.render("signup", { error: "user already exist" });
                     return;
                 }
             }
-            users.push({ name, username, mobile, email, password });
+            users.push(user);
 
             fs.writeFile("./db.txt", JSON.stringify(users), (err) => {
                 if (err) {
