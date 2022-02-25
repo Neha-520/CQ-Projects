@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=devide-width,initial-scale=1.0">
+</head>
+
+<body>
+    <div id="header">
+        Discussion Portal
+    </div>
+    <div class="container">
+        <div class="left_pane">
+            <div class="input_container">
+                <button class="new_ques">New Question form</button>
+                <input placeholder="search" class="search" />
+            </div>
+            <div id="ques_box">
+
+            </div>
+        </div>
+
+        <div id="right_pane" class="right_pane">
+            <h1>Welcome to Discussion Portal</h1>
+            <!-- <p>Enter a subject and question to get started</p> -->
+            <input id="subject" class="subject" placeholder="Subject" />
+            <textarea id="description" class="description" placeholder="Question"></textarea>
+            <button id="submit" class="submit">Submit</button>
+        </div>
+        <div id="right_pane2" style="display: none;">
+            <h3>Question</h3>
+            <div id="right_que" class="question">
+                <h4 id="que_head"></h4>
+                <p id="que_text"></p>
+            </div>
+            <button class="submit" id="resolve">Resolve</button>
+
+            <h4>Response</h4>
+            <div id="response"></div>
+
+            <h3>Add Response</h3>
+            <input type="text" id="name" class="name" placeholder="Enter Name" />
+            <textarea id="comment" class="comment" placeholder="Enter Comment"></textarea>
+
+            <button class="submit" id="res_submit">Submit</button>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
